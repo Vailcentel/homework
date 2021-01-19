@@ -14,8 +14,8 @@
         <!-- Заменить картинку чака на что-то другое -->
         <img style="border-radius: 10px;" class="magic-img" src="img/изменение картинки.jpg" alt="">
         <p class="joke">Здесь будет шутка</p>
-        <input style="border-radius: 10px" class="input-text" type="text" name="" id="">  
-        <button class="magic-button">определить радиус!</button>
+        <input style="border-radius: 10px" class="input-name" type="text" name="" id="">  
+        <button class="magic-button">определить возраст!</button>
 
     </div>
 
@@ -25,10 +25,10 @@
             document.querySelector(".magic-button").addEventListener('click', async function() {
                 //Заменить адрес, куда обращаемся
                 //https://official-joke-api.appspot.com/jokes/random
-                let response = await fetch('https://api.agify.io?name=' + name);  
-
+                
                 let input = document.querySelector('.input-name');  // Это само поле для ввода  
                 let name = input.value; // Это значение из этого поля  
+                let response = await fetch('https://api.agify.io?name=' + name);  
 
                 const jsonResponse = await response.json();
                 //Изменить перечень полей 
